@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    /* background: linear-gradient(135deg, #6a11cb, #2575fc); */
+    background: linear-gradient(135deg, #6a11cb, #2575fc, #3a7bd5, #00c6ff);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.container {
+    max-width: 750px;
+    width: 100%;
+    background-color: #fff;
+    padding: 10px 35px;
+    border-radius: 10px;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+}
+
+.container .logo {
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+.logo img {
+    max-width: 236px;
+}
+
+.container .title {
+    font-size: 20px;
+    font-weight: 600;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.container .title::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    height: 3px;
+    width: 55px;
+    border-radius: 10px;
+    /* background: linear-gradient(135deg, #6a11cb, #2575fc); */
+    background: linear-gradient(135deg, #6a11cb, #2575fc, #3a7bd5, #00c6ff);
+}
+
+.button {
+    /* height: 50px; */
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.button input {
+    padding: 7px 12px!important;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+    background:#195190ff;
+}
+
+.button input:hover {
+    background: #002b58;
+    border-color: #002b58;
+    color: #fff;
+}
+
+@media (max-width: 575px) {
+    .button{
+        margin: 10px 0;
+    }
+    .container {
+        padding: 10px 25px;
+
+    }
+}

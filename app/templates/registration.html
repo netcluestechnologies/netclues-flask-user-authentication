@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>User Registration</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/registration.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo">
+        </div>
+        <div class="title">Registration</div>
+        <div class="content">
+            <form id="registrationForm" method="post">
+                <div class="user-details">
+                    <div class="input-box">
+                        <label for="name" class="details">Name</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your name">
+                        <small class="error-message" id="nameError"></small>
+                    </div>
+                    <div class="input-box">
+                        <label for="username" class="details">Username</label>
+                        <input type="text" id="username" name="username" placeholder="Enter your username">
+                        <small class="error-message" id="usernameError"></small>
+                    </div>
+                    <div class="input-box">
+                        <label for="email" class="details">Email ID</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email id">
+                        <small class="error-message" id="emailError"></small>
+                    </div>
+                    <div class="input-box">
+                        <label for="phone" class="details">Phone Number</label>
+                        <input type="text" id="phone" name="phone" placeholder="Enter your phone number">
+                        <small class="error-message" id="phoneError"></small>
+                    </div>
+                    <div class="input-box">
+                        <div class="password" id="password-tips">
+                            <h5 class="password-title">Password must meet the following requirements:</h5>
+                        <ul>
+                            <li id="lowercase"><i class="n-icon cross-icon" data-icon="cross"></i> <i class="n-icon right-icon" data-icon="right"></i>At least <span> one lowercase letter</span></li>
+                            <li id="uppercase"><i class="n-icon cross-icon" data-icon="cross"></i> <i class="n-icon right-icon" data-icon="right"></i>At least <span> one uppercase letter</span></li>
+                            <li id="number"><i class="n-icon cross-icon" data-icon="cross"></i> <i class="n-icon right-icon" data-icon="right"></i>At least <span> one number</span></li>
+                            <li id="special-character"><i class="n-icon cross-icon" data-icon="cross"></i> <i class="n-icon right-icon" data-icon="right"></i>At least <span> one special character</span></li>
+                            <li id="password-length"><i class="n-icon cross-icon" data-icon="cross"></i> <i class="n-icon right-icon" data-icon="right"></i>Password should be <span> 6 to 20 characters</span></li>
+                        </ul>
+                    </div>
+                        <label for="password" class="details">Password</label>
+                        <input type="password" id="password" name="password" placeholder="Enter your password">
+                        <small class="error-message" id="passwordError"></small>
+                    </div>
+                    <div class="input-box">
+                        <label for="confirm-password" class="details">Confirm Password</label>
+                        <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password">
+                        <small class="error-message" id="confirmPasswordError"></small>
+                    </div>
+                </div>
+                <div class="gender-details">
+                    <span class="gender-title">Gender</span>
+                    <div class="category">
+                        <label for="male">
+                            <input type="radio" name="gender" id="male">
+                            <span class="dot one"></span>
+                            <span class="gender">Male</span>
+                        </label>
+                        <label for="female">
+                            <input type="radio" name="gender" id="female">
+                            <span class="dot two"></span>
+                            <span class="gender">Female</span>
+                        </label>
+                        <label for="other">
+                            <input type="radio" name="gender" id="other">
+                            <span class="dot three"></span>
+                            <span class="gender">Other</span>
+                        </label>
+                    </div>
+                </div>
+               <div class="btn">
+                   <div class="button">
+                       <input type="submit" value="Submit">
+                   </div>
+                   <div class="button">
+                       <input type="button" value="Login" onclick="window.location.href='/login'">
+                   </div>
+               </div>
+            </form>
+        </div>
+    </div>
+    <div id="loader" class="loader" style="display: none;"></div>
+    <div id="notificationContainer" class="notification-container"></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="{{ url_for('static', filename='js/svg.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/registration.js') }}"></script>
+</body>
+
+</html>

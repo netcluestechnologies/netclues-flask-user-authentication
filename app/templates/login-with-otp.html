@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login with OTP</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login-with-otp.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo">
+        </div>
+        <div class="title">Login with OTP</div>
+        <div class="content">
+            <form id="otpForm" action="#">
+                <div class="user-details">
+                    <div class="input-box">
+                        <label for="emailid" class="details">Email ID</label>
+                        <input type="text" id="emailid" placeholder="Enter your email id">
+                        <small class="error-message" id="emailidError"></small>
+                    </div>
+                </div>
+                <div class="btn" id="send-otp-section">
+                    <div class="button">
+                        <input type="button" id="sendOtpButton" value="Send OTP">
+                    </div>
+                    <div class="button">
+                        <input type="button" value="Registration" onclick="window.location.href='/registration'">
+                    </div>
+                </div>
+                <div class="user-details otp-section" style="display:none;">
+                    <div class="input-box">
+                        <label for="otp" class="details">Enter OTP</label>
+                        <input type="text" id="otp" placeholder="Enter the OTP">
+                        <small class="error-message" id="otpError"></small>
+                    </div>
+                </div>
+                <div class="otp-section" style="display:none;">
+                    <div class="btn">
+                        <div class="button">
+                            <input type="button" id="verifyOtpButton" value="Verify OTP">
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div id="loader" class="loader" style="display: none;"></div>
+    <div id="notificationContainer" class="notification-container"></div>
+    <script src="{{ url_for('static', filename='js/login-with-otp.js') }}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</body>
+
+</html>

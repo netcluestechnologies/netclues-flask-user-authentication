@@ -1,0 +1,8 @@
+pytz==2024.1
+Flask==3.0.3
+Flask-Bcrypt==1.0.1
+Flask-Mail==0.10.0
+Flask-SQLAlchemy==3.1.1
+SQLAlchemy==2.0.30
+psycopg2==2.9.9
+bcrypt==4.1.3
